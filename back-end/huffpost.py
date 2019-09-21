@@ -5,7 +5,7 @@ class HuffPost(Site):
     def __init__(self):
         super().__init__()
         self.query_keyword = 'https://search.huffpost.com/search?p={}'
-        self.query_breaking = 'https://www.huffpost.com/'
+        self.query_breaking = 'https://www.huffpost.com/news/'
     
     def query_str(self, keyword=None):
         # no keyword, use breaking news
