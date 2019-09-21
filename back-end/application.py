@@ -5,6 +5,7 @@ from newssite import Site
 from cnn import CNN
 from huffpost import HuffPost
 from washpost import WashPost
+import random
 
 application = Flask(__name__)
 CORS(application)
@@ -40,11 +41,14 @@ def keyword_search():
     data = {'data': []}
 
     for site in sites:
-        # get the link and its source
-        link = site.get_links(keyword)
+        # get the links and its source
+        links = site.get_links(keyword)
         link_src = site.__class__.__name__
-        new_entry = {'src': link_src, 'link': link}
-        data['data'].append(new_entry)
+        for link in links:
+            new_entry = {'src': link_src, 'link': link}
+            data['data'].append(new_entry)
+
+    random.shuffle(data['data'])
 
     json_str = json.dumps(data)
 
