@@ -1,6 +1,6 @@
 
 from cnn import CNN
-from api import api
+from application import application
 
 def main():
     cnn = CNN()
@@ -8,4 +8,4 @@ def main():
 
 if __name__ == '__main__':
     #main()
-    api.run(host='0.0.0.0', debug=True, port=5000)
+    application.run(host='0.0.0.0', debug=True, port=5000)

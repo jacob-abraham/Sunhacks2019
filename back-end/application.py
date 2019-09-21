@@ -4,13 +4,13 @@ from newssite import Site
 from cnn import CNN
 from huffpost import HuffPost
 
-api = Flask(__name__)
+application = Flask(__name__)
 
-@api.route('/')
+@application.route('/')
 def hello():
     return "hello world"
 
-@api.route('/keyword')
+@application.route('/keyword')
 def keyword_search():
     # setup args for site and keyword
     
