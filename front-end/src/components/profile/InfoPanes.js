@@ -7,29 +7,40 @@ import "../../App.css";
 function InfoPanes() {
   return (
     <div style={{ width: "100%" }}>
-      <BiasContainer />
-      <div>
+      <div style={{ padding: "2%", background: "#F5F5DC" }}>
+        <BiasContainer />
+      </div>
+
+      <div
+        style={{ padding: "2%", textAlign: "center", background: "#F5F5DC" }}
+      >
         <Paper>
-          <Typography variant="h6">Bias explained</Typography>
-          <p>
+          <Typography style={{ padding: "1%" }} variant="h5">
+            Bias explained
+          </Typography>
+          <Typography variant="body1" style={{ padding: "2%" }}>
             Maecenas lacinia finibus fringilla. Praesent quis felis magna. Nam
             vulputate mi sit amet fringilla iaculis. Vestibulum in sagittis
             eros. Donec at dignissim dui. Aliquam fringilla dui sem, a feugiat
             leo dictum sit amet. Morbi eleifend velit quis nunc varius lacinia.
             Vestibulum laoreet sit amet sem vitae tempus.
-          </p>
+          </Typography>
         </Paper>
       </div>
-      <div>
+      <div
+        style={{ padding: "2%", textAlign: "center", background: "#F5F5DC" }}
+      >
         <Paper>
-          <Typography variant="h6">More information</Typography>
-          <p>
+          <Typography style={{ padding: "1%" }} variant="h5">
+            More information
+          </Typography>
+          <Typography variant="body1" style={{ padding: "2%" }}>
             Maecenas lacinia finibus fringilla. Praesent quis felis magna. Nam
             vulputate mi sit amet fringilla iaculis. Vestibulum in sagittis
             eros. Donec at dignissim dui. Aliquam fringilla dui sem, a feugiat
             leo dictum sit amet. Morbi eleifend velit quis nunc varius lacinia.
             Vestibulum laoreet sit amet sem vitae tempus.
-          </p>
+          </Typography>
         </Paper>
       </div>
     </div>
