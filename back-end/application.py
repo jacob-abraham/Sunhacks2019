@@ -4,6 +4,7 @@ import json
 from newssite import Site
 from cnn import CNN
 from huffpost import HuffPost
+from washpost import WashPost
 
 application = Flask(__name__)
 CORS(application)
@@ -27,11 +28,23 @@ def keyword_search():
     if src is None:
         sites.append(CNN())
         sites.append(HuffPost())
+        sites.append(WashPost())
     elif src == "cnn":
         sites.append(CNN())
     elif src == "huffpost":
         sites.append(HuffPost())
+    elif src == "washpost":
+        sites.append(WashPost())
     
+
+    data = {'data': []}
+
+    for site in sites:
+        # get the link and its source
+        link = site.get_links(keyword)
+        link_src = site.__class__.__name__
+
+
 
     links = [{site.__class__.__name__: site.get_links(keyword)} for site in sites]
 

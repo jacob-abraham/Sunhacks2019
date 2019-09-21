@@ -1,7 +1,9 @@
 
-from huffpost import HuffPost
+from washpost import WashPost
 from application import application
 
 if __name__ == '__main__':
-    src = HuffPost()
-    print(src.get_links())
+    src = WashPost()
+    links = src.get_links('republican')
+    print(*links, sep='\n')
+    print(len(links))
