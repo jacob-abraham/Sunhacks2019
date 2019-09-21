@@ -4,6 +4,16 @@ from selenium import webdriver
 
 
 class Site:
+
+    #static vars
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--incognito')
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    options.add_experimental_option("prefs", prefs)
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(chrome_options=options)
+
     def __init__(self):
         self.query_keyword = None
         self.query_breaking = None
@@ -19,14 +29,6 @@ class Site:
     
     def get_html(self, keyword=None, refresh=False):
         if(refresh or self.html_content is None):
-            options = webdriver.ChromeOptions()
-            options.add_argument('--ignore-certificate-errors')
-            options.add_argument('--incognito')
-            prefs = {"profile.managed_default_content_settings.images": 2}
-            options.add_experimental_option("prefs", prefs)
-            options.add_argument('--headless')
-            driver = webdriver.Chrome(chrome_options=options)
-            
             driver.get(self.query_str(keyword))
 
             self.html_content = driver.page_source
