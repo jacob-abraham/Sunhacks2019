@@ -5,10 +5,10 @@ import "../../App.css";
 function NavBar() {
   return (
     <React.Fragment>
-      <nav class="navbar">
+      <nav className="navbar">
         <h1>
           <Link to="/">
-            <i class="fas fa-code"></i> The News.com
+            <i className="fas fa-code"></i> The News.com
           </Link>
         </h1>
         <ul>

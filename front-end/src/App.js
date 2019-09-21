@@ -8,6 +8,8 @@ import Profile from "./components/profile/Profile";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
+import Links from "./components/AxiosCalls/Links";
+
 function App() {
   return (
     <Router>
@@ -20,6 +22,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/try" component={Links} />
           </Switch>
         </section>
       </Fragment>

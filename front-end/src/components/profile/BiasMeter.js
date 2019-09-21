@@ -5,7 +5,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 
 const BorderLinearProgress = withStyles({
   root: {
-    height: 50,
+    height: 20,
     backgroundColor: lighten("#ff6c5c", 0.5),
     width: "90%"
   },
@@ -38,9 +38,9 @@ export default function BiasMeter() {
           textAlign: "center"
         }}
       >
-        <Typography variant="h4">Liberal</Typography>
-        <Typography variant="h4">&#9;Neutral</Typography>
-        <Typography variant="h4">Conservative</Typography>
+        <Typography variant="h6">Liberal</Typography>
+        <Typography variant="h6">&#9;Neutral</Typography>
+        <Typography variant="h6">Conservative</Typography>
       </div>
 
       <div className={classes.root}>
