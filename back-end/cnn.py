@@ -4,7 +4,8 @@ class CNN(Site):
 
     def __init__(self):
         super().__init__()
-        self.query = 'https://www.cnn.com/search?q={}&size={}'
+        self.query_keyword = 'https://www.cnn.com/search?q={}&size={}'
+        self.query_breaking = None
     
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

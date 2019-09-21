@@ -6,6 +6,10 @@ from huffpost import HuffPost
 
 api = Flask(__name__)
 
+@api.route('/')
+def hello():
+    return "hello world"
+
 @api.route('/keyword')
 def keyword_search():
     # setup args for site and keyword
