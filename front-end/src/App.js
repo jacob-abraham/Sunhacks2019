@@ -5,10 +5,11 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Home from "./components/home/Home";
 import Profile from "./components/profile/Profile";
+import Search from "./components/search/Search";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
-import Links from "./components/AxiosCalls/Links";
+//import Links from "./components/AxiosCalls/Links";
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/try" component={Links} />
+            <Route exact path="/search" component={Search} />
+            {
+              //<Route exact path="/try" component={Links} />
+            }
           </Switch>
         </section>
       </Fragment>

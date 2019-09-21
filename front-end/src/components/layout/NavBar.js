@@ -13,7 +13,7 @@ function NavBar() {
         </h1>
         <ul>
           <li>
-            <Link to="/articles">Articles</Link>
+            <Link to="/search">Search</Link>
           </li>
           <li>
             <Link to="/register">Register</Link>

@@ -9,6 +9,7 @@ function BiasSection() {
         style={{
           textAlign: "center",
           marginTop: "15%",
+          marginBottom: "5%",
           fontFamily: "Open Sans Condensed , sans-serif"
         }}
       >
