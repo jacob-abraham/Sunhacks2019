@@ -43,12 +43,9 @@ def keyword_search():
         # get the link and its source
         link = site.get_links(keyword)
         link_src = site.__class__.__name__
+        new_entry = {'src': link_src, 'link': link}
+        data['data'].append(new_entry)
 
-
-
-    links = [{site.__class__.__name__: site.get_links(keyword)} for site in sites]
-
-    data = {"links": links}
     json_str = json.dumps(data)
 
     return json_str
