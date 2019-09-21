@@ -20,9 +20,9 @@ def keyword_search():
     if src is None:
         sites.append(CNN())
         sites.append(HuffPost())
-    elif src.lower() is "cnn":
+    elif src == "cnn":
         sites.append(CNN())
-    elif src.lower() is "huffpost":
+    elif src == "huffpost":
         sites.append(HuffPost())
 
     
