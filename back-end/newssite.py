@@ -29,9 +29,9 @@ class Site:
     
     def get_html(self, keyword=None, refresh=False):
         if(refresh or self.html_content is None):
-            driver.get(self.query_str(keyword))
+            Site.driver.get(self.query_str(keyword))
 
-            self.html_content = driver.page_source
+            self.html_content = Site.driver.page_source
         return self.html_content
     
     def get_parser(self, keyword=None):
