@@ -26,7 +26,7 @@ def keyword_search():
     # select th sites to use
     if src is None:
         sites.append(CNN())
-        #sites.append(HuffPost())
+        sites.append(HuffPost())
     elif src == "cnn":
         sites.append(CNN())
     elif src == "huffpost":

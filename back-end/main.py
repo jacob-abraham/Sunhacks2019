@@ -1,11 +1,7 @@
 
-from cnn import CNN
+from huffpost import HuffPost
 from application import application
 
-def main():
-    cnn = CNN()
-    print(cnn.get_links("democrat"))
-
 if __name__ == '__main__':
-    cnn = CNN()
-    print(cnn.get_links())
+    src = HuffPost()
+    print(src.get_links())
