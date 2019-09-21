@@ -1,15 +1,17 @@
 from flask import Flask, request
+from flask_cors import CORS
 import json
 from newssite import Site
 from cnn import CNN
 from huffpost import HuffPost
 
 application = Flask(__name__)
+CORS(application)
 
 @application.route('/')
 def hello():
-    return """<h1>Commands<h1>
-            <p>keyword?key=[keyword to search for]&source=[specific source to use]<p>"""
+    return """<h1>Commands</h1>
+            <p>keyword?key=[keyword to search for]&source=[specific source to use]</p>"""
 
 @application.route('/keyword')
 def keyword_search():
