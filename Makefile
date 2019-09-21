@@ -5,11 +5,16 @@ COLOR_OFF=\033[0m
 ENV=env
 PYTHON=$(ENV)/bin/python
 PIP=$(ENV)/bin/pip
-MAIN=main.py
+MAIN=back-end/main.py
 
 
 all: loadLibs
 	$(PYTHON) $(MAIN)
+	# npm start --prefix front-end
+
+# setup npm
+npminstall:
+	npm install
 
 # save external libs in requirements.txt
 saveLibs: mkEnv
