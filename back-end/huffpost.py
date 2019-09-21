@@ -7,14 +7,14 @@ class HuffPost(Site):
         self.query_keyword = 'https://search.huffpost.com/search?p={}'
         self.query_breaking = None
     
-    def query_str(self, keyword):
+    def query_str(self, keyword=None):
         # no keyword, use breaking news
         if keyword is None:
             return self.query_breaking
         else:
             return self.query_keyword.format(keyword.strip().replace(' ', '%20'))
 
-    def get_links(self, keyword):
+    def get_links(self, keyword=None):
         parser = self.get_parser(keyword)
         all_headlines = parser.find_all('li', class_ = 'ov-a mt-0 pt-26 pb-26 bt-dbdbdb')
         link_tags = [tag.find('a').get('href') for tag in all_headlines]

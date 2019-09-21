@@ -8,7 +8,8 @@ application = Flask(__name__)
 
 @application.route('/')
 def hello():
-    return "hello world"
+    return """<h1>Commands<h1>
+            <p>keyword?key=[keyword to search for]&source=[specific source to use]<p>"""
 
 @application.route('/keyword')
 def keyword_search():
@@ -17,18 +18,17 @@ def keyword_search():
     # get site to use, if none use all
     src = request.args.get('source')
     src = src.lower() if src is not None else src
-    keyword = request.args['key']
+    keyword = request.args.get('key')
 
     sites = []
-
+    # select th sites to use
     if src is None:
         sites.append(CNN())
-        sites.append(HuffPost())
+        #sites.append(HuffPost())
     elif src == "cnn":
         sites.append(CNN())
     elif src == "huffpost":
         sites.append(HuffPost())
-
     
 
     links = [{site.__class__.__name__: site.get_links(keyword)} for site in sites]

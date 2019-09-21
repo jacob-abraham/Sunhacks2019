@@ -22,8 +22,11 @@ class Site:
             options = webdriver.ChromeOptions()
             options.add_argument('--ignore-certificate-errors')
             options.add_argument('--incognito')
+            prefs = {"profile.managed_default_content_settings.images": 2}
+            options.add_experimental_option("prefs", prefs)
             options.add_argument('--headless')
             driver = webdriver.Chrome(chrome_options=options)
+            
             driver.get(self.query_str(keyword))
 
             self.html_content = driver.page_source
