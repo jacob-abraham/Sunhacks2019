@@ -37,3 +37,6 @@ def keyword_search():
     json_str = json.dumps(data)
 
     return json_str
+
+if __name__ == "__main__":
+    application.run(host='0.0.0.0')
