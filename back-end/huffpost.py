@@ -10,13 +10,18 @@ class HuffPost(Site):
 
     def get_links(self, keyword=None):
         parser = self.get_parser(keyword)
-        links = []
+        links = [tuple]
         # no keyword, scarp for breaking
         if keyword is None:
             all_headlines = parser.find_all('div', class_ = 'card__headline')
-            links = [tag.find('a').get('href') for tag in all_headlines] 
+            for tag in all_headlines:
+                link = tag.find('a').get('href')
+                title = tag.find('div', class_ = 'card__headline__text')
+                links.append((link,title))
         else:
             all_headlines = parser.find_all('li', class_ = 'ov-a mt-0 pt-26 pb-26 bt-dbdbdb')
-            link_tags = [tag.find('a').get('href') for tag in all_headlines]
-            links = [link[2:] for link in link_tags]
+            for tag in all_headlines:
+                link = tag.find('a').get('href')[2:0]
+                title = tag.find('a').get('title')
+                links.append((link,title))
         return links

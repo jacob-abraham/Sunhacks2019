@@ -12,6 +12,7 @@ from washtimes import WashTimes
 from bireport import BiReport
 from infowars import InfoWars
 from nyt import NYT
+from nbc import NBC
 import random
 from selenium import webdriver
 from time import time
@@ -62,6 +63,7 @@ def keyword_search():
         sites.append(BiReport(driver))
         sites.append(InfoWars(driver))
         sites.append(NYT(driver))
+        sites.append(NBC(driver))
     elif src == "cnn":
         sites.append(CNN(driver))
     elif src == "huffpost":
@@ -82,6 +84,8 @@ def keyword_search():
         sites.append(InfoWars(driver))
     elif src == "nyt":
         sites.append(NYT(driver))
+    elif src == "nbc":
+        sites.append(NBC(driver))
     
 
     data = {'data': []}
@@ -90,8 +94,8 @@ def keyword_search():
         # get the links and its source
         links = site.get_links(keyword)
         link_src = site.__class__.__name__
-        for link in links:
-            new_entry = {'src': link_src, 'link': link, 'bias': site.bias_score}
+        for link, title in links:
+            new_entry = {'src': link_src, 'link': link, 'title': link, 'bias': site.bias_score}
             data['data'].append(new_entry)
         
         print(f'Reading "{link_src}" took {(time() - site_time):.4f}s')
