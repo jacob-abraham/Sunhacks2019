@@ -27,11 +27,6 @@ function BiasSection() {
           to be truly unbiased, there would be nothing besides facts and
           observations present in any news article.
         </Typography>
-        <Typography variant="h6">
-          <a href="https://www.isidewith.com/political-quiz">
-            View your bias here
-          </a>
-        </Typography>
       </div>
       <Typography
         variant="h2"
@@ -90,7 +85,7 @@ function BiasSection() {
           fontFamily: "Open Sans Condensed , sans-serif"
         }}
       >
-        <Typography variant="h2">
+        <Typography variant="b2">
           Check out this (albeit cringy) video on how some biases are created
           without us even realizing it:
         </Typography>
@@ -98,9 +93,10 @@ function BiasSection() {
       <div align="center">
         <iframe
           src="https://www.youtube.com/embed/Q8NydsXl32s"
-          frameBorder="0"
+          frameborder="0"
           title="Clip"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
           width="560"
           height="315"
         ></iframe>

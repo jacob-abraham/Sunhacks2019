@@ -12,18 +12,44 @@ function InfoPanes() {
       </div>
 
       <div
-        style={{ padding: "2%", textAlign: "center", background: "#F5F5DC" }}
+        style={{ padding: "2%", textAlign: "left", background: "#F5F5DC" }}
       >
         <Paper>
           <Typography style={{ padding: "1%" }} variant="h5">
-            Bias explained
+          <i>What does this mean?</i>
           </Typography>
           <Typography variant="body1" style={{ padding: "2%" }}>
-            Maecenas lacinia finibus fringilla. Praesent quis felis magna. Nam
-            vulputate mi sit amet fringilla iaculis. Vestibulum in sagittis
-            eros. Donec at dignissim dui. Aliquam fringilla dui sem, a feugiat
-            leo dictum sit amet. Morbi eleifend velit quis nunc varius lacinia.
-            Vestibulum laoreet sit amet sem vitae tempus.
+          &nbsp;&nbsp;&nbsp;&nbsp;Your numerical score here represents your bias in news media 
+          choices. The higher the number, the more you tend to view 
+          biased news sources. The lower your score, the more you look 
+          at both sides of the bias spectrum or do a good job of fining 
+          generally unbiased sources. The color of your score represents 
+          which side (blue for liberal and red for conservative) your bias 
+          leans.
+          </Typography>
+          <Typography variant="body1" style={{ padding: "2%" }}>
+          <u>Minimal Bias (0-3):</u> &nbsp;Congratulations! You have done 
+          a great job so far giving yourself a wide range of sources 
+          to find information from or have found very good sources 
+          with minimal bias. Just remember, nothing is without bias, 
+          and by figuring out what the bias is you can figure out what 
+          information can be trusted.
+          </Typography>
+          <Typography variant="body1" style={{ padding: "2%" }}>
+          <u>General Bias (4-7):</u> &nbsp;Good but not great. 
+          You aren’t extremely biased, but you do tend to favor 
+          one side. This could lead to untrue conclusions and 
+          facts found in your articles. Try and look at articles 
+          from your opposing bias to see what facts and statements 
+          differ and from their come up with you own conclusions.
+          </Typography>
+          <Typography variant="body1" style={{ padding: "2%" }}>
+          <u>Extreme Bias (8-10):</u> &nbsp;Needs improvement. 
+          You seem to only view extremely biased news sources. 
+          This can lead to lots of misinformation and biased 
+          conclusions. Try and use different sources and make 
+          note of the differences. Use our tools to try and avoid 
+          extreme (high numbered) news outlets.
           </Typography>
         </Paper>
       </div>
@@ -32,15 +58,18 @@ function InfoPanes() {
       >
         <Paper>
           <Typography style={{ padding: "1%" }} variant="h5">
-            More information
+            Explore Your Bias:
           </Typography>
           <Typography variant="body1" style={{ padding: "2%" }}>
-            Maecenas lacinia finibus fringilla. Praesent quis felis magna. Nam
-            vulputate mi sit amet fringilla iaculis. Vestibulum in sagittis
-            eros. Donec at dignissim dui. Aliquam fringilla dui sem, a feugiat
-            leo dictum sit amet. Morbi eleifend velit quis nunc varius lacinia.
-            Vestibulum laoreet sit amet sem vitae tempus.
+            If you want to find out more about your personal biases,
+            check out the site below to take a quiz and see where your
+            ideals align with political parties.
           </Typography>
+          <Typography variant="h6">
+          <a href="https://www.isidewith.com/political-quiz">
+            Explore Your Bias
+          </a>
+        </Typography>
         </Paper>
       </div>
     </div>

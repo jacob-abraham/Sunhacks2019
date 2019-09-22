@@ -3,8 +3,19 @@ import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import "../../App.css";
+import imagePng from "../../img/biasBar.png"
 
-const BorderLinearProgress = withStyles({
+function NavBar() {
+  return (
+    <React.Fragment>
+      <img src={imagePng} alt="Bias Bar" width="300" height="65">
+      </img>
+    </React.Fragment>
+  );
+}
+export default NavBar;
+
+/*const BorderLinearProgress = withStyles({
   root: {
     height: 20,
     backgroundColor: lighten("#FFFFFF", 0.5),
@@ -55,3 +66,4 @@ export default function BiasMeter() {
     </div>
   );
 }
+*/
