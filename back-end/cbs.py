@@ -24,6 +24,7 @@ class CBS(Site):
             all_headlines = [headline for headline in parser.find_all('li') if headline.find('div', class_ = 'media-body') is not None]
             for tag in all_headlines:
                 link = str(tag.find('a').get('href'))
+                link = str(self.url + link[1:])
                 title = str(tag.find('a').text).strip()
                 links.append((link, title))
         # clean out videos
