@@ -2,8 +2,8 @@ from newssite import Site
 
 class CBS(Site):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, driver):
+        super().__init__(driver)
         self.query_keyword = 'https://www.cbsnews.com/search/?q={}'
         self.query_breaking = 'https://www.cbsnews.com/us/'
         self.url = 'https://www.cbsnews.com/'

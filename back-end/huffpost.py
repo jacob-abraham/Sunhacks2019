@@ -2,8 +2,8 @@ from newssite import Site
 
 class HuffPost(Site):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, driver):
+        super().__init__(driver)
         self.query_keyword = 'https://search.huffpost.com/search?p={}'
         self.query_breaking = 'https://www.huffpost.com/news/'
 

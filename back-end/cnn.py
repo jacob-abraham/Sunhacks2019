@@ -2,8 +2,8 @@ from newssite import Site
 
 class CNN(Site):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, driver):
+        super().__init__(driver)
         self.query_keyword = 'https://www.cnn.com/search?q={}&size='+str(self.number)
         self.query_breaking = 'https://www.cnn.com/us/'
         self.url = 'https://www.cnn.com/'
