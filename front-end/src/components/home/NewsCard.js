@@ -34,13 +34,17 @@ export default function NewsCard(props) {
           <Typography gutterBottom variant="h6" component="h1">
             {props.title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
+          <Typography variant="body4" color="textSecondary" component="p">
+            {props.link}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => (window.location = props.link)}
+        >
           Read More
         </Button>
       </CardActions>

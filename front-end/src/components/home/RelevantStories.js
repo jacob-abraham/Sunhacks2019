@@ -26,7 +26,7 @@ function RelevantStories(props) {
       </Typography>
       <div style={divStyle}>
         {props.data.map(article => (
-          <SmallNewsCard key={article.src} title={article.link} />
+          <SmallNewsCard key={article.link} title={article.title} />
         ))}
       </div>
     </Fragment>

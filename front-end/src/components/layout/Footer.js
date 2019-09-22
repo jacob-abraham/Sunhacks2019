@@ -26,9 +26,16 @@ function NavBar() {
             <Link to="/login">Login</Link>
           </li>
         </ul>
-        <div style={{ textAlign: "center", display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center"
+          }}
+        >
           <LeftFooter />
-          <Typography variant="h3">The News.com</Typography>
+          <Typography variant="h3" style={{ padding: 15 }}>
+            The News.com
+          </Typography>
           <RightFooter />
         </div>
       </nav>

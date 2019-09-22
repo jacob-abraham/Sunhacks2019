@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
 import "../../App.css";
-import NewsCard from "./SmallNewsCard";
+import NewsCard from "./NewsCard";
 
 const divStyle = {
   display: "flex",
@@ -29,8 +29,8 @@ function BreakingNews(props) {
         {props.data.map(article => (
           <NewsCard
             key={article.src}
-            title={article.link}
-            description="This is temporary desc until Jacob sends article preview"
+            title={article.title}
+            link={article.link}
           />
         ))}
       </div>

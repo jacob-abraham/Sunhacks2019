@@ -27,7 +27,7 @@ export default function SmallNewsCard(props) {
 
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea onClick={() => (window.location = props.link)}>
         <CardMedia className={classes.media}>
           <div></div>
         </CardMedia>
