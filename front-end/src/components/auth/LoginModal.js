@@ -9,10 +9,10 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 /** Login Modal, modeled using MaterialUI**/
 export default function LoginModal(props) {
   function redirect() {
-    window.location = "http://localhost:3000/home";
+    window.location = "http://thenooz.tech.s3-website.us-west-1.amazonaws.com/home";
   }
   function refresh() {
-    window.location = "http://localhost:3000/";
+    window.location = "http://thenooz.tech.s3-website.us-west-1.amazonaws.com/";
   }
 
   //return a dialog box prompting the user to log in
