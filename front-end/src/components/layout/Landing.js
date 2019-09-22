@@ -37,27 +37,6 @@ function Landing() {
               Discover news in a new way: an innovative way to find and sort
               news using Python webscraping
             </p>
-            <div className="buttons">
-              <Button
-                variant="contained"
-                color="default"
-                onClick={e => handleSignUpClickOpen(e)}
-              >
-                Sign Up
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={e => handleLoginClickOpen(e)}
-              >
-                Login
-              </Button>
-              <LoginModal open={loginOpen} onClose={() => handleLoginClose} />
-              <SignUpModal
-                open={signUpOpen}
-                onClose={() => handleSignUpClose}
-              />
-            </div>
           </div>
         </div>
       </section>
