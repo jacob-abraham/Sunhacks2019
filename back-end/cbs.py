@@ -20,6 +20,6 @@ class CBS(Site):
             # scrape for keyword
             all_headlines = [headline for headline in parser.find_all('li') if headline.find('div', class_ = 'media-body') is not None]
             # grab the links
-            links = [tag.find('a').get('href') for tag in all_headlines]
+            links_tags = [tag.find('a').get('href') for tag in all_headlines]
             links = [(self.url + link[1:]) for link in link_tags
         return links
