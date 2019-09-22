@@ -14,12 +14,19 @@ class NYT(Site):
         if keyword is None:
             # no keyword, scrape for breaking
             all_headlines = parser.find_all('div', class_ = 'css-qvz0vj')
-            # grab the links
-            links = [tag.find('a').get('href') for tag in all_headlines]
+            for tag in all_headlines:
+                # grab the links
+                link = str(tag.find('a').get('href'))
+                # grab the title
+                title = str(tag.find('a').find('div').text).strip()
+                links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = parser.find_all('div', class_ = 'css-138we14')
             # grab the links
-            link_tags = [tag.find('a').get('href') for tag in all_headlines]
-            links = [(self.query_breaking + link[1:]) for link in link_tags]
+            for tag in all_headlines:
+                link = str(tag.find('a').get('href'))
+                link = str((self.query_breaking + link[1:])).strip()
+                title = str(tag.find('a').find('h4').text).strip()
+                links.append((link,title))
         return links

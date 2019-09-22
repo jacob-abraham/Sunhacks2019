@@ -13,6 +13,7 @@ from bireport import BiReport
 from infowars import InfoWars
 from nyt import NYT
 from nbc import NBC
+from cns import CNS
 import random
 from selenium import webdriver
 from time import time
@@ -64,6 +65,7 @@ def keyword_search():
         sites.append(InfoWars(driver))
         sites.append(NYT(driver))
         sites.append(NBC(driver))
+        sites.append(CNS(driver))
     elif src == "cnn":
         sites.append(CNN(driver))
     elif src == "huffpost":
@@ -86,16 +88,28 @@ def keyword_search():
         sites.append(NYT(driver))
     elif src == "nbc":
         sites.append(NBC(driver))
+    elif src == "cns":
+        sites.append(CNS(driver))
     
 
     data = {'data': []}
     for site in sites:
         site_time = time()
         # get the links and its source
-        links = [site.get_links(keyword)]
+        links = site.get_links(keyword)
         link_src = site.__class__.__name__
         for link in links:
-            new_entry = {'src': link_src, 'link': link[0], 'title': link[1], 'bias': site.bias_score}
+
+            #edit title
+            title = link[1]
+            title = title.replace('\u2019', '\'')
+            title = title.replace('\u2018', '\'')
+            title = title.replace('\u201c', '"')
+            title = title.replace('\u201d', '"')
+            title = title.replace('\u2013', '-')
+            title = title.replace('\u2014', '-')
+
+            new_entry = {'src': link_src, 'link': link[0], 'title': title, 'bias': site.bias_score}
             data['data'].append(new_entry)
         
         print(f'Reading "{link_src}" took {(time() - site_time):.4f}s')

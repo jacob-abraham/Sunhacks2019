@@ -15,14 +15,20 @@ class CBS(Site):
         if keyword is None:
             # no keyword, scrape for breaking
             all_headlines = parser.find_all('article')
-            # grab the links
-            links = [tag.find('a').get('href') for tag in all_headlines]
+            for tag in all_headlines:
+                link = str(tag.find('a').get('href'))
+                title = str(tag.find('a').find('h4', class_ = 'item__hed').text).strip()
+                links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = [headline for headline in parser.find_all('li') if headline.find('div', class_ = 'media-body') is not None]
-            # grab the links
-            link_tags = [tag.find('a').get('href') for tag in all_headlines]
-            links = [(self.url + link[1:]) for link in link_tags]
+            for tag in all_headlines:
+                link = str(tag.find('a').get('href'))
+                link = str(self.url + link[1:])
+                title = str(tag.find('a').text).strip()
+                links.append((link, title))
         # clean out videos
-        links = [link for link in links if '/video/' not in link]
+        links = [link for link in links if '/video/' not in link[0]]
+        # remove duplicates
+        links = list(dict.fromkeys(links))
         return links
