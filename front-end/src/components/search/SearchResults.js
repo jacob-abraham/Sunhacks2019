@@ -8,10 +8,11 @@ function SearchResults(props) {
     <List>
       {props.data.map(article => (
         <ResultArea
-          key={article.src}
+          key={article.link}
           link={article.link}
-          title={article.src} //{article.title}
-          bias="7.8" //{article.bias}
+          title={article.title}
+          bias={article.bias < 0 ? article.bias * -1 : article.bias}
+          color={article.bias < 0 ? "blue" : "red"}
         />
       ))}
     </List>
