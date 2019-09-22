@@ -6,13 +6,6 @@ class HuffPost(Site):
         super().__init__()
         self.query_keyword = 'https://search.huffpost.com/search?p={}'
         self.query_breaking = 'https://www.huffpost.com/news/'
-    
-    def query_str(self, keyword=None):
-        # no keyword, use breaking news
-        if keyword is None:
-            return self.query_breaking
-        else:
-            return self.query_keyword.format(keyword.strip().replace(' ', '%20'))
 
     def get_links(self, keyword=None):
         parser = self.get_parser(keyword)

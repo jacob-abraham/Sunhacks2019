@@ -5,10 +5,16 @@ from newssite import Site
 from cnn import CNN
 from huffpost import HuffPost
 from washpost import WashPost
+from fox import Fox
+from wsj import WSJ
+from cbs import CBS
 import random
 
 application = Flask(__name__)
 CORS(application)
+
+
+# TODO: as soon as app launches, open all websites to save csss
 
 @application.route('/')
 def hello():
@@ -22,6 +28,7 @@ def keyword_search():
     src = request.args.get('source')
     src = src.lower() if src is not None else src
     keyword = request.args.get('key')
+    # make args for only some links
 
     sites = []
     # select th sites to use
@@ -29,12 +36,21 @@ def keyword_search():
         sites.append(CNN())
         sites.append(HuffPost())
         sites.append(WashPost())
+        sites.append(Fox())
+        sites.append(WSJ())
+        sites.append(CBS())
     elif src == "cnn":
         sites.append(CNN())
     elif src == "huffpost":
         sites.append(HuffPost())
     elif src == "washpost":
         sites.append(WashPost())
+    elif src == "fox":
+        sites.append(Fox())
+    elif src == "wsj":
+        sites.append(WSJ())
+    elif src == "cbs":
+        sites.append(CBS())
     
 
     data = {'data': []}

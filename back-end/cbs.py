@@ -6,7 +6,7 @@ class CBS(Site):
         super().__init__()
         self.query_keyword = 'https://www.cbsnews.com/search/?q={}'
         self.query_breaking = 'https://www.cbsnews.com/us/'
-        self.url = 'https://www.cbsnews.com'
+        self.url = 'https://www.cbsnews.com/'
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)
@@ -20,6 +20,8 @@ class CBS(Site):
             # scrape for keyword
             all_headlines = [headline for headline in parser.find_all('li') if headline.find('div', class_ = 'media-body') is not None]
             # grab the links
-            links_tags = [tag.find('a').get('href') for tag in all_headlines]
-            links = [(self.url + link[1:]) for link in link_tags
+            link_tags = [tag.find('a').get('href') for tag in all_headlines]
+            links = [(self.url + link[1:]) for link in link_tags]
+        # clean out videos
+        links = [link for link in links if '/video/' not in link]
         return links

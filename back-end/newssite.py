@@ -27,7 +27,7 @@ class Site:
         if keyword is None:
             return self.query_breaking
         else:
-            return self.query_keyword.format(keyword.strip().replace(' ', '%20'), self.number)
+            return self.query_keyword.format(keyword.strip().replace(' ', '%20'))
     
     def get_html(self, keyword=None, refresh=False):
         if(refresh or self.html_content is None):

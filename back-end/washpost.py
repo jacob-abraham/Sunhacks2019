@@ -7,13 +7,6 @@ class WashPost(Site):
         self.query_keyword = 'https://www.washingtonpost.com/newssearch/?query={}'
         self.query_breaking = 'https://www.washingtonpost.com/'
 
-    def query_str(self, keyword=None):
-        # no keyword, use breaking news
-        if keyword is None:
-            return self.query_breaking
-        else:
-            return self.query_keyword.format(keyword.strip().replace(' ', '%20'))
-
     def get_links(self, keyword=None):
         parser = self.get_parser(keyword)
         links = []
