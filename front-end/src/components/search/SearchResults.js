@@ -5,11 +5,11 @@ import ResultArea from "./ResultArea";
 function SearchResults(props) {
   return (
     <List>
-      {props.map(article => (
+      {props.data.map(article => (
         <ResultArea
-          key={article.title}
-          link={article.source}
-          title={article.title} //{article.title}
+          key={article.src}
+          link={article.link}
+          title={article.src} //{article.title}
           bias="7.8" //{article.bias}
         />
       ))}

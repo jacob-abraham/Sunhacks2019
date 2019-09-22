@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import NewsCard from "./NewsCard";
 import Typography from "@material-ui/core/Typography";
 import "../../App.css";
+import NewsCard from "./SmallNewsCard";
 
 const divStyle = {
   display: "flex",
@@ -12,7 +12,7 @@ const divStyle = {
   marginTop: "5%"
 };
 
-function BreakingNews() {
+function BreakingNews(props) {
   return (
     <Fragment>
       <Typography
@@ -26,21 +26,13 @@ function BreakingNews() {
       </Typography>
 
       <div style={divStyle}>
-        <NewsCard
-          title="From CNN: DNC Third Debate Kicks off Tomorrow"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
-            Mauris posuere quam eu tortor malesuada, quis vestibulum quam bibendum."
-        />
-        <NewsCard
-          title="From Fox: The Third Democratic Debate, Live"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Mauris posuere quam eu tortor malesuada, quis vestibulum quam bibendum."
-        />
-        <NewsCard
-          title="From NBC: Watch the DNC candidates go head to head"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Mauris posuere quam eu tortor malesuada, quis vestibulum quam bibendum."
-        />
+        {props.data.map(article => (
+          <NewsCard
+            key={article.src}
+            title={article.link}
+            description="This is temporary desc until Jacob sends article preview"
+          />
+        ))}
       </div>
     </Fragment>
   );

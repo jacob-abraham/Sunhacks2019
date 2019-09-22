@@ -28,7 +28,9 @@ export default function SmallNewsCard(props) {
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia className={classes.media} />
+        <CardMedia className={classes.media}>
+          <div></div>
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="body1" component="h6">
             {props.title}
