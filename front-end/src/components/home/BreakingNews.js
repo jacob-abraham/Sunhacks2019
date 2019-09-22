@@ -12,6 +12,8 @@ const divStyle = {
   marginTop: "5%"
 };
 
+/** Breaking News Section of home page.
+ * Receives the data from the backend and maps each link to a NewsCard**/
 function BreakingNews(props) {
   return (
     <Fragment>
@@ -24,7 +26,7 @@ function BreakingNews(props) {
       >
         Breaking News
       </Typography>
-
+      {/** For each article in the data, create a new NewsCard with its respective data */}
       <div style={divStyle}>
         {props.data.map(article => (
           <NewsCard

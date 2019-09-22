@@ -2,6 +2,7 @@ import React from "react";
 import List from "@material-ui/core/List";
 import ResultArea from "./ResultArea";
 
+/** Holds the individual results of a search **/
 function SearchResults(props) {
   return (
     <List>

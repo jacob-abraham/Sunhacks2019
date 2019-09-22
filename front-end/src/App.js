@@ -9,6 +9,8 @@ import Footer from "./components/layout/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
+/** View Read.me for Project information! **/
+/** Main class of the application, handles react-router logic and component organization **/
 function App() {
   return (
     <Router>

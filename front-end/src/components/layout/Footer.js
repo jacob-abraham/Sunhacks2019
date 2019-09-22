@@ -5,7 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import LeftFooter from "./LeftFooterImages";
 import RightFooter from "./RightFooterImages";
 
-function NavBar() {
+/** Footer, spans bottom of page across all pages on the site. **/
+function Footer() {
   return (
     <React.Fragment>
       <nav className="footer">
@@ -42,4 +43,4 @@ function NavBar() {
     </React.Fragment>
   );
 }
-export default NavBar;
+export default Footer;

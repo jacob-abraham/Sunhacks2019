@@ -6,6 +6,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import DescriptionIcon from "@material-ui/icons/Description";
 
+/** Represents each search result **/
 export default function ResultArea(props) {
   return (
     <div>

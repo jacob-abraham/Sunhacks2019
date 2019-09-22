@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
+/** NavBar component, spans all pages on website **/
 function NavBar() {
   return (
     <React.Fragment>

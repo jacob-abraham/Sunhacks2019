@@ -22,9 +22,9 @@ const useStyles = makeStyles({
   }
 });
 
+/**Smaller News Card component for Relevant stories. Contains link and title **/
 export default function SmallNewsCard(props) {
   const classes = useStyles();
-
   return (
     <Card className={classes.card}>
       <CardActionArea onClick={() => (window.location = props.link)}>

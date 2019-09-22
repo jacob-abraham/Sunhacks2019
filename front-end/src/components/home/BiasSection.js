@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
 
+/** This is the bottom section of the home page, where bias is explained **/
 function BiasSection() {
   return (
     <Fragment>
@@ -95,6 +96,7 @@ function BiasSection() {
           without us even realizing it:
         </Typography>
       </div>
+      {/**An embedded Adam Ruins Everything Clip to explain Bias! */}
       <div align="center">
         <iframe
           src="https://www.youtube.com/embed/Q8NydsXl32s"

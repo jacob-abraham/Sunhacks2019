@@ -21,6 +21,7 @@ const useStyles = makeStyles({
   }
 });
 
+/** NewsCard component for breaking news articles **/
 export default function NewsCard(props) {
   const classes = useStyles();
 

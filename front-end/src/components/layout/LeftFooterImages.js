@@ -4,6 +4,7 @@ import cbsLogo from "../../img/cbs.png";
 import wsjLogo from "../../img/wallstreet.jpg";
 import huffLogo from "../../img/huff.png";
 
+/** Left side of the footer, holds its images **/
 export default function LeftFooterImages() {
   return (
     <div style={{ display: "flex" }}>

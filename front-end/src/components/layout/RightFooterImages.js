@@ -4,6 +4,7 @@ import nytimesLogo from "../../img/nytimes.jpg";
 import washtimesLogo from "../../img/washtimes.png";
 import washpostLogo from "../../img/washpost.jpg";
 
+/** Right side of the footer, holds its images **/
 export default function RightFooterImages() {
   return (
     <div style={{ display: "flex" }}>
