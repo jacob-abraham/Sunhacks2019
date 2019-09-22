@@ -9,7 +9,7 @@ import axios from "axios";
 
 class Search extends Component {
   state = {
-    links: null,
+    articles: null,
     loading: false,
     dataLoaded: false,
     value: ""
@@ -20,9 +20,10 @@ class Search extends Component {
     const res = await axios.get(
       `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword?key=${keyword}`
     );
-    const links = await res.data.links[0];
-    const cnnLinks = links.CNN;
-    this.setState({ links: cnnLinks, loading: false, dataLoaded: true });
+    const data = await res.data;
+    const dataArr = data.data; //an array of objects
+    console.log(dataArr);
+    this.setState({ articles: dataArr, loading: false, dataLoaded: true });
   };
 
   onChangeHandler = async e => {
@@ -56,7 +57,9 @@ class Search extends Component {
           </div>
           <div style={{ textAlign: "center", margin: "2%" }}>
             {this.state.loading && <CircularProgress color="primary" />}
-            {this.state.dataLoaded && <SearchResults data={this.state.links} />}
+            {this.state.dataLoaded && (
+              <SearchResults data={this.state.articles} />
+            )}
           </div>
         </section>
       </Fragment>
