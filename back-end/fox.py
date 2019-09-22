@@ -12,14 +12,14 @@ class Fox(Site):
         links = []
         if keyword is None:
             # no keyword, scrape for breaking
-            all_headlines = [headline for headline in parser.find_all('h4')]
+            all_headlines = parser.find_all('h4')
             # grab the links
             link_tags = [tag.find('a').get('href') for tag in all_headlines]
             # add self
             links = [str(self.query_breaking + link[1:]) for link in link_tags]
         else:
             # scrape for keyword
-            all_headlines = [headline for headline in parser.find_all('div', class_ = 'search-directive ng-scope')]
+            all_headlines = parser.find_all('div', class_ = 'search-directive ng-scope')
             # grab the links
             links = [tag.find('a').get('href') for tag in all_headlines]    
         return links
