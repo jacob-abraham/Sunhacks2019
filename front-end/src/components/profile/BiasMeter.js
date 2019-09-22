@@ -2,11 +2,12 @@ import React from "react";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import "../../App.css";
 
 const BorderLinearProgress = withStyles({
   root: {
-    height: 50,
-    backgroundColor: lighten("#ff6c5c", 0.5),
+    height: 20,
+    backgroundColor: lighten("#FFFFFF", 0.5),
     width: "90%"
   },
   bar: {
@@ -35,19 +36,19 @@ export default function BiasMeter() {
           display: "flex",
           width: "100%",
           justifyContent: "space-between",
-          textAlign: "center"
+          textAlign: "center",
+          minHeight: "90%"
         }}
       >
-        <Typography variant="h4">Liberal</Typography>
-        <Typography variant="h4">&#9;Neutral</Typography>
-        <Typography variant="h4">Conservative</Typography>
+        <Typography variant="h6">Liberal</Typography>
+        <Typography variant="h6">&#9;Neutral</Typography>
+        <Typography variant="h6">Conservative</Typography>
       </div>
 
       <div className={classes.root}>
         <BorderLinearProgress
           className={classes.margin}
           variant="determinate"
-          color="primary"
           value={100}
         />
       </div>

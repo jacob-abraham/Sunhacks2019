@@ -24,7 +24,7 @@ function RelevantStories() {
       >
         Relevant Stories
       </Typography>
-      <div style={divStyle}>
+      <div style={divStyle} color="gray">
         <SmallNewsCard title="Markets crash as Saudi Oil losses deepen" />
         <SmallNewsCard title="Global economies worry as trade talks continue" />
         <SmallNewsCard title="China, Trump agree to discuss tariffs" />

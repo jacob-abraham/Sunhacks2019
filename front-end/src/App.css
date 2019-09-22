@@ -339,6 +339,19 @@ button {
   height: 100vh;
 }
 
+.profileimg {
+  background: url("./img/newProfileBG.jpg") no-repeat center center/cover;
+  height: 550px;
+  width: 350px;
+}
+
+.profile-dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 550px;
+  width: 350px;
+}
+
 .landing-inner {
   color: #fff;
   height: 100%;

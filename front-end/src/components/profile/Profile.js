@@ -1,14 +1,21 @@
 import React from "react";
-import BiasMeter from "./BiasMeter";
-import Header from "./Header";
+import ProfileCard from "./ProfileCard";
 import "../../App.css";
+import InfoPanes from "./InfoPanes";
 
 function Profile() {
   return (
     <React.Fragment>
       <section className="container">
-        <Header />
-        <BiasMeter />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "spacing-between"
+          }}
+        >
+          <ProfileCard />
+          <InfoPanes />
+        </div>
       </section>
     </React.Fragment>
   );
