@@ -2,8 +2,8 @@ from newssite import Site
 
 class WSJ(Site):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, driver):
+        super().__init__(driver)
         self.query_keyword = 'https://www.wsj.com/search/term.html?KEYWORDS={}'
         self.query_breaking = 'https://www.wsj.com/news/us/'
         self.url = 'https://www.wsj.com/'

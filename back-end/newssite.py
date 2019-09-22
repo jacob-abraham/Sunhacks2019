@@ -1,22 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
 from time import time
 
 class Site:
 
-    #static vars
-    options = webdriver.ChromeOptions()
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument('--incognito')
-    prefs = {"profile.managed_default_content_settings.images": 2, 
-            "profile.default_content_settings.images": 2,
-            "disk-cache-size": 4096}
-    options.add_experimental_option("prefs", prefs)
-    options.add_argument('--headless')
-    driver = webdriver.Chrome(chrome_options=options)
-
-    def __init__(self):
+    def __init__(self, driver):
+        # web driver
+        self.driver = driver
         self.query_keyword = None
         self.query_breaking = None
         self.html_content = None
@@ -32,11 +22,10 @@ class Site:
     def get_html(self, keyword=None, refresh=False):
         if(refresh or self.html_content is None):
             start = time()
-            Site.driver.get(self.query_str(keyword))
-            parse_time = time() - start
-            print(f'Parse gen took {parse_time}s: parsing {self.query_breaking}')
+            self.driver.get(self.query_str(keyword))
 
-            self.html_content = Site.driver.page_source
+            self.html_content = self.driver.page_source
+            print(f'Parser generation took {(time() - start):.4f}s: parsing "{self.query_breaking}"')
         return self.html_content
     
     def get_parser(self, keyword=None):
