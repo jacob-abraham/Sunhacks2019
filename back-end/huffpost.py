@@ -15,13 +15,14 @@ class HuffPost(Site):
         if keyword is None:
             all_headlines = parser.find_all('div', class_ = 'card__headline')
             for tag in all_headlines:
-                link = tag.find('a').get('href')
-                title = tag.find('div', class_ = 'card__headline__text')
+                link = str(tag.find('a').get('href'))
+                title = str(tag.find('div', class_ = 'card__headline__text'))
                 links.append((link,title))
         else:
             all_headlines = parser.find_all('li', class_ = 'ov-a mt-0 pt-26 pb-26 bt-dbdbdb')
             for tag in all_headlines:
-                link = tag.find('a').get('href')[2:0]
-                title = tag.find('a').get('title')
+                link = str(tag.find('a').get('href')[2:0])
+                title = str(tag.find('a').get('title'))
                 links.append((link,title))
+        print(*links, sep='\n')
         return links

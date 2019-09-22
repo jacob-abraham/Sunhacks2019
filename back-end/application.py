@@ -92,10 +92,10 @@ def keyword_search():
     for site in sites:
         site_time = time()
         # get the links and its source
-        links = site.get_links(keyword)
+        links = [site.get_links(keyword)]
         link_src = site.__class__.__name__
-        for link, title in links:
-            new_entry = {'src': link_src, 'link': link, 'title': link, 'bias': site.bias_score}
+        for link in links:
+            new_entry = {'src': link_src, 'link': link[0], 'title': link[1], 'bias': site.bias_score}
             data['data'].append(new_entry)
         
         print(f'Reading "{link_src}" took {(time() - site_time):.4f}s')
