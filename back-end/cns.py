@@ -15,15 +15,20 @@ class CNS(Site):
             # no keyword, scrape for breaking
             all_headlines = parser.find_all('div', class_ = 'views-field views-field-title')
             # grab the links
-            link_tags = [tag.find('span').find('a').get('href') for tag in all_headlines]
-            # remove all non cnn links, al outside links start with http://
-            link_tags = [tag for tag in link_tags if 'https://' not in tag]
-            links = [str(self.query_breaking + link[1:]) for link in link_tags]
+            for tag in all_headlines:
+                link = str(tag.find('span').find('a').get('href'))
+                # remove all non cnn links, al outside links start with http://
+                if 'https://' not in link:
+                    link = str(self.query_breaking + link[1:])
+                    title = str(tag.find('span').find('a').find('div').text).strip()
+                    links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = parser.find_all('h3', class_ = 'title')
             # grab the links
-            links = [tag.find('a').get('href') for tag in all_headlines]
+            link = str(tag.find('a').get('href'))
+            title = str(tag.find('a').text).strip()
+            links.append((link, title))
         # clean out videos
-        links = [link for link in links if '/video/' not in link]
+        links = [link for link in links if '/video/' not in link[0]]
         return links
