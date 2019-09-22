@@ -13,12 +13,19 @@ class NBC(Site):
         links = []
         if keyword is None:
             # no keyword, scrape for breaking
-            all_headlines = parser.find_all('h2', class_ = 'info___2s-c2')
-            # grab the links
-            links = [tag.find('h3').find('a').get('href') for tag in all_headlines]
+            all_headlines = parser.find_all('div', class_ = 'info___2S-C2')
+            for tag in all_headlines:
+                link = str(tag.find('h3').find('a').get('href'))
+                title = str(tag.find('h3').find('a').text).strip()
+                links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = parser.find_all('div', class_ = 'gs-title')
-            # grab the links
-            links = [tag.find('a').get('href') for tag in all_headlines]
+            for tag in all_headlines:
+                link = tag.find('a').get('href')
+                if link is not None:
+                    link = str(link)
+                    title = str(tag.find('a').text).strip()
+                    links.append((link, title))
+        links = list(dict.fromkeys(links))
         return links

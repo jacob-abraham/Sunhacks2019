@@ -29,8 +29,8 @@ class CNN(Site):
         else:
             all_headlines = parser.find_all('h3', class_ = 'cnn-search__result-headline')
             for tag in all_headlines:
-                link = str(tag.find('a').get('href')[2:0])
-                title = str(tag.find('a').get('href').text).strip()
+                link = str(tag.find('a').get('href')[2:])
+                title = str(tag.find('a').text).strip()
                 links.append((link, title))
         # clean out videos
         links = [link for link in links if '/videos/' not in link[0]]

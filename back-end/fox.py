@@ -15,18 +15,22 @@ class Fox(Site):
         if keyword is None:
             # no keyword, scrape for breaking
             all_headlines = parser.find_all('article')
-            # grab the links
-            link_tags = [tag.find('a').get('href') for tag in all_headlines]
-            # remove videos
-            link_tags = [link_tag for link_tag in link_tags if 'video.foxnews' not in link_tag]
-            # remove duplicates
-            link_tags = list(dict.fromkeys(link_tags))
-            
-            # add self
-            links = [str(self.url + link[1:]) for link in link_tags]
+            for tag in all_headlines:
+                #grab link
+                link = tag.find('a').get('href')
+                # remove video
+                if 'video.foxnews' not in link:
+                    link = str(self.url + link[1:])
+                    title = str(tag.find('a').text).strip()
+                    links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = parser.find_all('div', class_ = 'search-directive ng-scope')
-            # grab the links
-            links = [tag.find('a').get('href') for tag in all_headlines]    
+            for tag in all_headlines:
+                link = str(tag.find('a').get('href'))
+                if 'video.foxnews' not in link:
+                    title = str(tag.find('a').text).strip()
+                    links.append((link, title))
+        # remove duplicates
+        links = list(dict.fromkeys(links))
         return links
