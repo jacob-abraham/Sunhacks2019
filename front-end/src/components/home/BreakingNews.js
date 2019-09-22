@@ -33,6 +33,7 @@ function BreakingNews(props) {
             key={article.src}
             title={article.title}
             link={article.link}
+            bias={article.bias}
           />
         ))}
       </div>

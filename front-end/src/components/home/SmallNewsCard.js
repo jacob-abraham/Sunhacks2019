@@ -13,8 +13,8 @@ const useStyles = makeStyles({
     maxWidth: 165,
     minWidth: 165,
     margin: "5px",
-    minHeight: 200,
-    maxHeight: 200
+    minHeight: 240,
+    maxHeight: 240
   },
   media: {
     height: 40,
@@ -29,7 +29,7 @@ export default function SmallNewsCard(props) {
     <Card className={classes.card}>
       <CardActionArea onClick={() => (window.location = props.link)}>
         <CardMedia className={classes.media}>
-          <div style={{ padding: "10%" }}>Bias: 2.8</div>
+          <div style={{ padding: "10%" }}>Bias: {props.bias}</div>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="body1" component="h6">

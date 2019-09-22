@@ -28,7 +28,11 @@ function RelevantStories(props) {
       {/** For each article in the data, create and render a SmallNewsCard with title and link**/}
       <div style={divStyle}>
         {props.data.map(article => (
-          <SmallNewsCard key={article.link} title={article.title} />
+          <SmallNewsCard
+            key={article.link}
+            title={article.title}
+            bias={article.bias}
+          />
         ))}
       </div>
     </Fragment>

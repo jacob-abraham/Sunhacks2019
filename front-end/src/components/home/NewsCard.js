@@ -10,8 +10,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 300,
-    minWidth: 300,
+    maxWidth: 340,
+    minWidth: 340,
     margin: "5px",
     marginBottom: "20px"
   },
@@ -29,7 +29,7 @@ export default function NewsCard(props) {
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia className={classes.media}>
-          <div style={{ padding: "10%" }}>Bias: 7.8</div>
+          <div style={{ padding: "10%" }}>Bias: {props.bias}</div>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h1">
