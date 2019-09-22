@@ -6,6 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
+/** SignUp Modal, modeled using MaterialUI**/
 export default function SignUpModal(props) {
   function redirect() {
     window.location = "http://localhost:3000/home";
@@ -14,6 +15,7 @@ export default function SignUpModal(props) {
     window.location = "http://localhost:3000/";
   }
 
+  //return a sign up modal, prompting the user to create an account
   return (
     <Dialog
       open={props.open}

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
 
+/** This is the bottom section of the home page, where bias is explained **/
 function BiasSection() {
   return (
     <Fragment>
@@ -90,11 +91,12 @@ function BiasSection() {
           fontFamily: "Open Sans Condensed , sans-serif"
         }}
       >
-        <Typography variant="h2">
+        <Typography variant="body2">
           Check out this (albeit cringy) video on how some biases are created
           without us even realizing it:
         </Typography>
       </div>
+      {/**An embedded Adam Ruins Everything Clip to explain Bias! */}
       <div align="center">
         <iframe
           src="https://www.youtube.com/embed/Q8NydsXl32s"

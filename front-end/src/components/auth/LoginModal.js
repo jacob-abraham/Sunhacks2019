@@ -6,6 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
+/** Login Modal, modeled using MaterialUI**/
 export default function LoginModal(props) {
   function redirect() {
     window.location = "http://localhost:3000/home";
@@ -14,6 +15,7 @@ export default function LoginModal(props) {
     window.location = "http://localhost:3000/";
   }
 
+  //return a dialog box prompting the user to log in
   return (
     <Dialog
       open={props.open}

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
 import "../../App.css";
-import NewsCard from "./SmallNewsCard";
+import NewsCard from "./NewsCard";
 
 const divStyle = {
   display: "flex",
@@ -12,6 +12,8 @@ const divStyle = {
   marginTop: "5%"
 };
 
+/** Breaking News Section of home page.
+ * Receives the data from the backend and maps each link to a NewsCard**/
 function BreakingNews(props) {
   return (
     <Fragment>
@@ -24,13 +26,13 @@ function BreakingNews(props) {
       >
         Breaking News
       </Typography>
-
+      {/** For each article in the data, create a new NewsCard with its respective data */}
       <div style={divStyle}>
         {props.data.map(article => (
           <NewsCard
             key={article.src}
-            title={article.link}
-            description="This is temporary desc until Jacob sends article preview"
+            title={article.title}
+            link={article.link}
           />
         ))}
       </div>

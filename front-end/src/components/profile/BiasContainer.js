@@ -3,6 +3,7 @@ import BiasMeter from "./BiasMeter";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 
+/* Holds the bias meter in paper*/
 function BiasContainer() {
   return (
     <div style={{ justifyItems: "center" }}>
