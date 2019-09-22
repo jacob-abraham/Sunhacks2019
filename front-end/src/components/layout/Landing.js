@@ -31,8 +31,8 @@ function Landing() {
           <div className="landing-inner">
             <h1 className="x-large">The News.com</h1>
             <p className="lead">
-              Discover news in a new way: an innovative way to find news using
-              Machine Learning
+              Discover news in a new way: an innovative way to find and sort
+              news using Python webscraping
             </p>
             <div className="buttons">
               <Button

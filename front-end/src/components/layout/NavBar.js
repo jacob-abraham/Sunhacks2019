@@ -13,19 +13,16 @@ function NavBar() {
         </h1>
         <ul>
           <li>
-            <Link to="/search">Search</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/search">Search</Link>
           </li>
           <li>
             <Link to="/profile">Profile</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>

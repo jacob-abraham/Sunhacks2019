@@ -90,7 +90,7 @@ function BiasSection() {
           fontFamily: "Open Sans Condensed , sans-serif"
         }}
       >
-        <Typography variant="h2">
+        <Typography variant="body2">
           Check out this (albeit cringy) video on how some biases are created
           without us even realizing it:
         </Typography>
