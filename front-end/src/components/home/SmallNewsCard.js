@@ -29,7 +29,7 @@ export default function SmallNewsCard(props) {
     <Card className={classes.card}>
       <CardActionArea onClick={() => (window.location = props.link)}>
         <CardMedia className={classes.media}>
-          <div></div>
+          <div style={{ padding: "10%" }}>Bias: 2.8</div>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="body1" component="h6">

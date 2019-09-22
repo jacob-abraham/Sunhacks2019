@@ -29,7 +29,7 @@ export default function NewsCard(props) {
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia className={classes.media}>
-          <div></div>
+          <div style={{ padding: "10%" }}>Bias: 7.8</div>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h1">
