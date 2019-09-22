@@ -23,8 +23,6 @@ def keyword_search():
     src = src.lower() if src is not None else src
     keyword = request.args.get('key')
 
-    # 
-
     sites = []
     # select th sites to use
     if src is None:
@@ -40,7 +38,6 @@ def keyword_search():
     
 
     data = {'data': []}
-
     for site in sites:
         # get the links and its source
         links = site.get_links(keyword)
