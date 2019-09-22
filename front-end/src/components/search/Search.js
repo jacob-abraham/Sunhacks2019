@@ -20,7 +20,7 @@ class Search extends Component {
   handleSearchClicked = async keyword => {
     this.setState({ loading: true });
     const res = await axios.get(
-      `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword?key=${keyword}`
+      `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword`
     );
     const data = await res.data;
     const dataArr = data.data; //an array of objects, each with a link and a src

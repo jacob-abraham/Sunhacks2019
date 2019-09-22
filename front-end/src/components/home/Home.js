@@ -26,7 +26,7 @@ class Home extends React.Component {
     this.setState({ loading: true });
     /**General url to retrieve breaking news **/
     const res = await axios.get(
-      `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword?key=breaking`
+      `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword`
     );
 
     const data = await res.data;
