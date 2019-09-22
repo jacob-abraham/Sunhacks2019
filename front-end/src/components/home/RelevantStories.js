@@ -11,6 +11,7 @@ const divStyle = {
   marginTop: "5%"
 };
 
+/** Relevant stories section of home page **/
 function RelevantStories(props) {
   return (
     <Fragment>
@@ -24,9 +25,10 @@ function RelevantStories(props) {
       >
         Relevant Stories
       </Typography>
+      {/** For each article in the data, create and render a SmallNewsCard with title and link**/}
       <div style={divStyle}>
         {props.data.map(article => (
-          <SmallNewsCard key={article.src} title={article.link} />
+          <SmallNewsCard key={article.link} title={article.title} />
         ))}
       </div>
     </Fragment>

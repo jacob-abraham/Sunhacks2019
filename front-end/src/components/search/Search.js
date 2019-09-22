@@ -7,6 +7,7 @@ import SearchResults from "./SearchResults";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
 
+/** Search class is main page for search, parent of other search elements and makes axios call to handle search **/
 class Search extends Component {
   state = {
     articles: null,
@@ -15,6 +16,7 @@ class Search extends Component {
     value: ""
   };
 
+  /** Make the axios call to the backend and pass in the word they searched for **/
   handleSearchClicked = async keyword => {
     this.setState({ loading: true });
     const res = await axios.get(
@@ -22,7 +24,6 @@ class Search extends Component {
     );
     const data = await res.data;
     const dataArr = data.data; //an array of objects, each with a link and a src
-    //console.log(dataArr);
     this.setState({ articles: dataArr, loading: false, dataLoaded: true });
   };
 

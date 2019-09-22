@@ -11,6 +11,7 @@ class Site:
         self.query_breaking = None
         self.html_content = None
         self.number = 10
+        self.bias_score = None
     
     def query_str(self, keyword=None):
         # no keyword, use breaking news

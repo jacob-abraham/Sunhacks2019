@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../App.css";
 import imagePng from "../../img/newsIcon.png"
 
+/** NavBar component, spans all pages on website **/
 function NavBar() {
   return (
     <React.Fragment>
@@ -20,19 +21,16 @@ function NavBar() {
         </ul>
         <ul>
           <li>
-            <Link to="/search">Search</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/search">Search</Link>
           </li>
           <li>
             <Link to="/profile">Profile</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>

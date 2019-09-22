@@ -21,6 +21,7 @@ const useStyles = makeStyles({
   }
 });
 
+/** NewsCard component for breaking news articles **/
 export default function NewsCard(props) {
   const classes = useStyles();
 
@@ -28,19 +29,23 @@ export default function NewsCard(props) {
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia className={classes.media}>
-          <div></div>
+          <div style={{ padding: "10%" }}>Bias: 7.8</div>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h1">
             {props.title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
+          <Typography variant="body4" color="textSecondary" component="p">
+            {props.link}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => (window.location = props.link)}
+        >
           Read More
         </Button>
       </CardActions>

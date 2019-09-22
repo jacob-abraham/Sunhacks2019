@@ -6,7 +6,9 @@ import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import "../../App.css";
 
+/** Home Screen that puts everything together and makes the axios call to the backend to retrieve sources **/
 class Home extends React.Component {
+  //state to hold the received data
   state = {
     breakingArticles: null,
     relevantArticles: null,
@@ -14,23 +16,25 @@ class Home extends React.Component {
     dataLoaded: false
   };
 
+  //Use this method (unsafe = deprecated) to load the data before the component mounts
   UNSAFE_componentWillMount() {
     this.loadBreakingNewsData();
   }
 
-  //make axios call when component mounts
+  /** GET REQUEST to retrieve all sources */
   loadBreakingNewsData = async keyword => {
     this.setState({ loading: true });
-    /**General get request to retrieve breaking news **/
+    /**General url to retrieve breaking news **/
     const res = await axios.get(
       `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword`
     );
 
     const data = await res.data;
-    let dataArr = data.data; //JSON.parse(data); //an array of objects, each with a link and a src
+    let dataArr = data.data; //an array of objects, each with a link and a src
     const breakingNewsArr = dataArr.slice(0, 5); //get the first 5 for the breaking news
     const relevantNewsArr = dataArr.slice(5, 11); //get the next 6 for the relevant news
 
+    //Set the state so other components can use data as props
     this.setState({
       breakingArticles: breakingNewsArr,
       relevantArticles: relevantNewsArr,
@@ -39,6 +43,7 @@ class Home extends React.Component {
     });
   };
 
+  //If the data has not been received, show loading
   render() {
     return (
       <Fragment>

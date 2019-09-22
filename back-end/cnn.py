@@ -5,9 +5,9 @@ class CNN(Site):
     def __init__(self, driver):
         super().__init__(driver)
         self.query_keyword = 'https://www.cnn.com/search?q={}&type=article&size='+str(self.number)
-        
         self.query_breaking = 'https://www.cnn.com/specials/last-50-stories'
         self.url = 'https://www.cnn.com/'
+        self.bias_score = -4.4
     
     def get_links(self, keyword=None):
         parser = self.get_parser(keyword)
