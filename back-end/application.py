@@ -6,7 +6,6 @@ from cnn import CNN
 from huffpost import HuffPost
 from washpost import WashPost
 import random
-import logging
 
 application = Flask(__name__)
 CORS(application)
@@ -19,11 +18,12 @@ def hello():
 @application.route('/keyword')
 def keyword_search():
     # setup args for site and keyword
-    
     # get site to use, if none use all
     src = request.args.get('source')
     src = src.lower() if src is not None else src
     keyword = request.args.get('key')
+
+    # 
 
     sites = []
     # select th sites to use
@@ -56,6 +56,4 @@ def keyword_search():
     return json_str
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='/opt/python/log/debug.log', level=logging.DEBUG)
     application.run(host='0.0.0.0')
-    logging.debug('test')

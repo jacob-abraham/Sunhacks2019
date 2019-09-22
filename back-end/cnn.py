@@ -20,10 +20,8 @@ class CNN(Site):
             link_tags = [tag.find('a').get('href') for tag in all_headlines]
             # grab only from todays date
             links = [(self.query_breaking + link[1:]) for link in link_tags if link[1:11] == self.today]
-
         else:
             all_headlines = parser.find_all('h3', class_ = 'cnn-search__result-headline')
             link_tags = [tag.find('a').get('href') for tag in all_headlines]
             links = [link[2:] for link in link_tags]
-
         return links
