@@ -10,7 +10,7 @@ export default function ResultArea(props) {
   const clr = props.color;
   return (
     <div>
-      <ListItem>
+      <ListItem onClick={() => window.open(props.link)}>
         <ListItemAvatar>
           <Avatar>
             <p style={{ color: clr }}>{props.bias}</p>
