@@ -27,7 +27,9 @@ export default function NewsCard(props) {
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia className={classes.media} />
+        <CardMedia className={classes.media}>
+          <div></div>
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h1">
             {props.title}

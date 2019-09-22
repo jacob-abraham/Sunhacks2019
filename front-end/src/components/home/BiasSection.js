@@ -90,7 +90,7 @@ function BiasSection() {
           fontFamily: "Open Sans Condensed , sans-serif"
         }}
       >
-        <Typography variant="b2">
+        <Typography variant="h2">
           Check out this (albeit cringy) video on how some biases are created
           without us even realizing it:
         </Typography>
@@ -98,10 +98,9 @@ function BiasSection() {
       <div align="center">
         <iframe
           src="https://www.youtube.com/embed/Q8NydsXl32s"
-          frameborder="0"
+          frameBorder="0"
           title="Clip"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
           width="560"
           height="315"
         ></iframe>

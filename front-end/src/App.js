@@ -7,10 +7,9 @@ import Home from "./components/home/Home";
 import Profile from "./components/profile/Profile";
 import Search from "./components/search/Search";
 import About from "./components/about/About";
+import Footer from "./components/layout/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-
-//import Links from "./components/AxiosCalls/Links";
 
 function App() {
   return (
@@ -28,6 +27,7 @@ function App() {
             <Route exact path="/about" component={About} />
           </Switch>
         </section>
+        <Footer />
       </Fragment>
     </Router>
   );

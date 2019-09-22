@@ -11,7 +11,7 @@ const divStyle = {
   marginTop: "5%"
 };
 
-function RelevantStories() {
+function RelevantStories(props) {
   return (
     <Fragment>
       <Typography
@@ -24,13 +24,10 @@ function RelevantStories() {
       >
         Relevant Stories
       </Typography>
-      <div style={divStyle} color="gray">
-        <SmallNewsCard title="Markets crash as Saudi Oil losses deepen" />
-        <SmallNewsCard title="Global economies worry as trade talks continue" />
-        <SmallNewsCard title="China, Trump agree to discuss tariffs" />
-        <SmallNewsCard title="Raytheon, United Technologies merger deal" />
-        <SmallNewsCard title="Markets rise on MSFT, APPL earnings beat" />
-        <SmallNewsCard title="Trump announces all out border funding" />
+      <div style={divStyle}>
+        {props.data.map(article => (
+          <SmallNewsCard key={article.src} title={article.link} />
+        ))}
       </div>
     </Fragment>
   );

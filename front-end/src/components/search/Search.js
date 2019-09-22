@@ -21,8 +21,8 @@ class Search extends Component {
       `http://back-end-dev.us-west-1.elasticbeanstalk.com/keyword?key=${keyword}`
     );
     const data = await res.data;
-    const dataArr = data.data; //an array of objects
-    console.log(dataArr);
+    const dataArr = data.data; //an array of objects, each with a link and a src
+    //console.log(dataArr);
     this.setState({ articles: dataArr, loading: false, dataLoaded: true });
   };
 
