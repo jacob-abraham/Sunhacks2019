@@ -6,6 +6,7 @@ class WashPost(Site):
         super().__init__(driver)
         self.query_keyword = 'https://www.washingtonpost.com/newssearch/?query={}'
         self.query_breaking = 'https://www.washingtonpost.com/'
+        self.bias_score = 1.2
 
     def get_links(self, keyword=None):
         parser = self.get_parser(keyword)

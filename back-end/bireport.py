@@ -1,11 +1,12 @@
 from newssite import Site
 
-class BipartisanReport(Site):
+class BiReport(Site):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, driver):
+        super().__init__(driver)
         self.query_keyword = 'https://bipartisanreport.com/?s={}'
         self.query_breaking = 'https://bipartisanreport.com/'
+        self.bias_score = -7.8
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)
