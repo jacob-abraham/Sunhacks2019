@@ -1,11 +1,9 @@
 
-from cnn import CNN
-from api import api
-
-def main():
-    cnn = CNN()
-    print(cnn.get_links("democrat"))
+from washpost import WashPost
+from application import application
 
 if __name__ == '__main__':
-    #main()
-    api.run(debug=True, port=5000)
+    src = WashPost()
+    links = src.get_links('republican')
+    print(*links, sep='\n')
+    print(len(links))
