@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import time
+import logging
 
 class Site:
 
@@ -13,7 +14,7 @@ class Site:
             "profile.default_content_settings.images": 2,
             "disk-cache-size": 4096}
     options.add_experimental_option("prefs", prefs)
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(chrome_options=options)
 
     def __init__(self):
@@ -34,6 +35,7 @@ class Site:
             start = time()
             Site.driver.get(self.query_str(keyword))
             parse_time = time() - start
+            logging.debug(f'Parse gen took {parse_time}s: parsing {self.query_breaking}')
             print(f'Parse gen took {parse_time}s: parsing {self.query_breaking}')
 
             self.html_content = Site.driver.page_source

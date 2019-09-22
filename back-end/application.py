@@ -6,6 +6,7 @@ from cnn import CNN
 from huffpost import HuffPost
 from washpost import WashPost
 import random
+import logging
 
 application = Flask(__name__)
 CORS(application)
@@ -55,4 +56,6 @@ def keyword_search():
     return json_str
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='/opt/python/log/debug.log', level=logging.DEBUG)
     application.run(host='0.0.0.0')
+    logging.debug('test')
