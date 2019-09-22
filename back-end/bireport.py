@@ -17,14 +17,15 @@ class BiReport(Site):
             for tag in all_headlines:
                 # grab the links
                 link = str(tag.find('a').get('href'))
-                title = str(tag.find('a').text).strip()
-                links.append((link, title))
+                if 'ad' not in link:
+                    title = str(tag.find('a').text).strip()
+                    links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = parser.find_all('h3', class_ = 'entry-title td-module-title')
             for tag in all_headlines:
                 # grab the links
                 link = str(tag.find('a').get('href'))
-                title = str(tag.fin('a').text).strip()
+                title = str(tag.find('a').text).strip()
                 links.append((link, title))
         return links

@@ -16,16 +16,16 @@ class NYT(Site):
             all_headlines = parser.find_all('div', class_ = 'css-qvz0vj')
             for tag in all_headlines:
                 # grab the links
-                link = str(tag.find('a').get('href').text).strip()
+                link = str(tag.find('a').get('href'))
                 # grab the title
-                title = str(tag.find('a').find('span', class_ = 'ghost').text).strip()
+                title = str(tag.find('a').find('div').text).strip()
                 links.append((link, title))
         else:
             # scrape for keyword
             all_headlines = parser.find_all('div', class_ = 'css-138we14')
             # grab the links
             for tag in all_headlines:
-                link = tag.find('a').get('href')
+                link = str(tag.find('a').get('href'))
                 link = str((self.query_breaking + link[1:])).strip()
                 title = str(tag.find('a').find('h4').text).strip()
                 links.append((link,title))

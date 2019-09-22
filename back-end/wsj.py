@@ -25,7 +25,7 @@ class WSJ(Site):
             all_headlines = parser.find_all('h3', class_ = 'headline')
             for tag in all_headlines:
                 # grab the links
-                link = tag.find('a').get('href')
+                link = str(tag.find('a').get('href'))
                 link = str(self.url + link[1:])
                 title = str(tag.find('a').text).strip()
                 links.append((link,title))

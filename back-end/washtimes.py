@@ -5,7 +5,7 @@ class WashTimes(Site):
     def __init__(self, driver):
         super().__init__(driver)
         self.query_keyword = 'https://www.washingtontimes.com/search/?q={}'
-        self.query_breaking = 'https://www.washingtontimes.com/news/national/'
+        self.query_breaking = 'https://www.washingtontimes.com/news/today/'
         self.url = 'https://www.washingtontimes.com/'
         self.bias_score = 4.2
 

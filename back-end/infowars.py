@@ -25,6 +25,6 @@ class InfoWars(Site):
             for tag in all_headlines:
                 # grab the links
                 link = str(tag.find('a').get('href'))
-                title = str(tag.fin('a').text).strip()
+                title = str(tag.find('a').text).strip()
                 links.append((link,title))
         return links
