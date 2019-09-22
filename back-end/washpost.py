@@ -14,10 +14,17 @@ class WashPost(Site):
         if keyword is None:
             # no keyword, scrape for breaking
             all_headlines = [headline for headline in parser.find_all('div') if headline.get('data-feature-id') == 'homepage/story-ans']
-            links = [tag.find('a').get('href') for tag in all_headlines if tag.find('a') is not None]
+            for tag in all_headlines:
+                if tag.find('a') is not None:
+                    link = tag.find('a').get('href')
+                    title = tag.find('a').text).strip()
+                    link.append((link,title))
         else:
             # scrape for keyword
             all_headlines = [headline for headline in parser.find_all('a') if headline.get('data-pb-field') == 'headlines.basic']
-            # grab the links
-            links = [tag.get('href') for tag in all_headlines]
+            for tag in all_headlines:
+                # grab the links
+                link = tag.get('href')
+                title = str(tag.text).strip()
+                links.append((link,title))
         return links
