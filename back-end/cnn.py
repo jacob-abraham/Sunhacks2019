@@ -19,15 +19,19 @@ class CNN(Site):
 
             # grab the links
             link_tags = [tag.find('a').get('href') for tag in all_headlines]
-
-            # remove all non cnn links, al outside links start with http://
-            link_tags = [tag for tag in link_tags if 'https://' not in tag]
-
-            links = [(self.url + link[1:]) for link in link_tags]
+            for tag in all_headlines:
+                link = str(tag.find('a').get('href'))
+                # remove all non cnn links, al outside links start with http://
+                if 'https://' not in link:
+                    link = str(self.url + link[1:])
+                    title = str(tag.find('span', class_ = 'cd__headline-text').text).strip()
+                    links.append((link, title))
         else:
             all_headlines = parser.find_all('h3', class_ = 'cnn-search__result-headline')
-            link_tags = [tag.find('a').get('href') for tag in all_headlines]
-            links = [link[2:] for link in link_tags]
+            for tag in all_headlines:
+                link = str(tag.find('a').get('href')[2:0])
+                title = str(tag.find('a').get('href').text).strip()
+                links.append((link, title))
         # clean out videos
-        links = [link for link in links if '/videos/' not in link]
+        links = [link for link in links if '/videos/' not in link[0]]
         return links
