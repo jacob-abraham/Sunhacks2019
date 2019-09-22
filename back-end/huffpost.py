@@ -6,6 +6,7 @@ class HuffPost(Site):
         super().__init__(driver)
         self.query_keyword = 'https://search.huffpost.com/search?p={}'
         self.query_breaking = 'https://www.huffpost.com/news/'
+        self.bias_score = -3.8
 
     def get_links(self, keyword=None):
         parser = self.get_parser(keyword)

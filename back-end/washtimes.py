@@ -1,12 +1,13 @@
 from newssite import Site
 
-class WashPost(Site):
+class WashTimes(Site):
 
     def __init__(self):
         super().__init__()
         self.query_keyword = 'https://www.washingtontimes.com/search/?cx=015385541671335030271%3Anfb7f1nj88q&cof=FORID%3A11&ie=UTF-8&q={}&sa=GO'
         self.query_breaking = 'https://www.washingtontimes.com/news/national/'
         self.url = 'https://www.washingtontimes.com/'
+        self.bias_score = 4.2
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

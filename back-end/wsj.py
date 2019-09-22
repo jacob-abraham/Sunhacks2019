@@ -7,6 +7,7 @@ class WSJ(Site):
         self.query_keyword = 'https://www.wsj.com/search/term.html?KEYWORDS={}'
         self.query_breaking = 'https://www.wsj.com/news/us/'
         self.url = 'https://www.wsj.com/'
+        self.bias_score = 0.6
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

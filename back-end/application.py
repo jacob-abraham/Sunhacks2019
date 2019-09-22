@@ -35,7 +35,7 @@ def keyword_search():
             "profile.default_content_settings.images": 2,
             "disk-cache-size": 4096}
     options.add_experimental_option("prefs", prefs)
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     driver = webdriver.Chrome(chrome_options=options)
     print(f'Browser creation took {(time() - start):.4f}s:')
 
@@ -85,7 +85,7 @@ def keyword_search():
 
     json_str = json.dumps(data)
 
-    driver.quit()
+    #driver.quit()
 
     print(f'Total time for request took {(time() - start):.4f}s:')
 

@@ -6,6 +6,7 @@ class BipartisanReport(Site):
         super().__init__()
         self.query_keyword = 'https://bipartisanreport.com/?s={}'
         self.query_breaking = 'https://bipartisanreport.com/'
+        self.bias_score = -7.8
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

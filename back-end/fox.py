@@ -7,6 +7,7 @@ class Fox(Site):
         self.query_keyword = 'https://www.foxnews.com/search-results/search?q={}'
         self.query_breaking = 'https://www.foxnews.com/us/'
         self.url = 'https://www.foxnews.com/'
+        self.bias_score = 8.8
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

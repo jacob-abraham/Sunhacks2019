@@ -6,6 +6,7 @@ class NYT(Site):
         super().__init__()
         self.query_keyword = 'https://www.nytimes.com/search?query={}'
         self.query_breaking = 'https://www.nytimes.com/'
+        self.bias_score = -1.2
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

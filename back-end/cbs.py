@@ -7,6 +7,7 @@ class CBS(Site):
         self.query_keyword = 'https://www.cbsnews.com/search/?q={}'
         self.query_breaking = 'https://www.cbsnews.com/us/'
         self.url = 'https://www.cbsnews.com/'
+        self.bias_score = -0.6
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)

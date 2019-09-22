@@ -1,11 +1,12 @@
 from newssite import Site
 
-class BipartisanReport(Site):
+class InfoWars(Site):
 
     def __init__(self):
         super().__init__()
         self.query_keyword = 'https://www.infowars.com/?s={}'
         self.query_breaking = 'https://www.infowars.com/breaking-news/'
+        self.bias_score = 10
 
     def get_links(self, keyword):
         parser = self.get_parser(keyword)
